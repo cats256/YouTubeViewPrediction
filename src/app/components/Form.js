@@ -85,6 +85,21 @@ export default function Form() {
           YouTube View Count Prediction From Metadata
         </h2>
 
+
+        <div className="mb-6 p-4 border border-red-300 bg-red-50 rounded-lg">
+          <p className="text-red-700 font-semibold text-lg mb-1">NOTE:</p>
+          <p className="text-red-700 text-sm">
+            Accidentally broke the model. Model optimization and tokenizer
+            update are currently in place.
+          </p>
+        </div>
+
+        <div className="mb-6 p-4 border-2 border-black-300 bg-black-50 rounded-lg">
+          <p className="text-black-700 text-sm">
+            This project helps content creators boost video views by optimizing their metadata.
+          </p>
+        </div>
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-gray-600 mb-1 font-medium">
