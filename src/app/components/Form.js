@@ -15,7 +15,7 @@ export default function Form() {
     has_subtitles: false,
     uploader: "",
     description: "",
-    hashtags: "", // New field for hashtags
+    hashtags: "",
   });
 
   const [response, setResponse] = useState(null);
@@ -44,7 +44,6 @@ export default function Form() {
     setError(null);
     setResponse(null);
 
-    // Convert hashtags into an array of objects
     const hashtagsArray = formData.hashtags
       .split(",")
       .map((tag) => ({ text: tag.trim() }))
@@ -53,7 +52,7 @@ export default function Form() {
     const payload = {
       ...formData,
       uploader_sub_count: Number(formData.uploader_sub_count || 0),
-      super_titles: hashtagsArray, // Sending hashtags in correct format
+      super_titles: hashtagsArray,
     };
 
     try {
@@ -72,6 +71,7 @@ export default function Form() {
       const data = await res.json();
       setResponse(data);
     } catch (err) {
+      console.log(err);
       setError("Failed to fetch data. Please try again.");
     } finally {
       setLoading(false);
