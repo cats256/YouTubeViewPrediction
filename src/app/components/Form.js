@@ -56,7 +56,7 @@ export default function Form() {
     };
 
     try {
-      const res = await fetch("http://willbui256.pythonanywhere.com/predict", {
+      const res = await fetch("https://willbui256.pythonanywhere.com/predict", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
